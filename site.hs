@@ -2,20 +2,20 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
-import 		     Text.Pandoc
+import           Text.Pandoc
 
 
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
     match "static/*/*" $ do
-	route idRoute
-	compile copyFileCompiler
+        route idRoute
+        compile copyFileCompiler
 
     match (fromList ["about.md", "contact.markdown"]) $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
-	    >>= loadAndApplyTemplate "templates/page.html" siteCtx
+            >>= loadAndApplyTemplate "templates/page.html" siteCtx
             >>= loadAndApplyTemplate "templates/default.html" siteCtx
             >>= relativizeUrls
 
@@ -62,11 +62,11 @@ main = hakyll $ do
 postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
-    siteCtx 
+    siteCtx
 
 siteCtx :: Context String
-siteCtx = 
-    constField "baseurl" "http://localhost:8000" `mappend` 
+siteCtx =
+    constField "baseurl" "http://localhost:8000" `mappend`
     constField "site_description" "my beautiful blog" `mappend`
     constField "instagram_username" "katychuang.nyc" `mappend`
     constField "twitter_username" "katychuang" `mappend`
