@@ -4,7 +4,7 @@ This theme is a fork of [CleanMagicMedium-Jekyll](https://github.com/SpaceG/Clea
 
 ## Installation instructions
 
-Note that this theme has specific features with requires a custom written [siteCtx context](https://github.com/katychuang/hakyll-cssgarden/blob/master/cleanMagic-hakyll/site.hs#L67), with specific fields mapped to the template fields. For example, $side_description$ is mapped below to "my beautiful blog"
+Note that this theme has specific features with requires a custom written [siteCtx context](https://github.com/katychuang/hakyll-cssgarden/blob/master/cleanMagic-hakyll/site.hs#L67), with specific fields mapped to the template fields. For example, $site_description$ is mapped below to "my beautiful blog"
 
 
 ```haskell
@@ -36,6 +36,26 @@ match "index.html" $ do
             >>= loadAndApplyTemplate "templates/default.html" indexCtx
             >>= relativizeUrls
 ```
+
+## Building with Stack
+
+Building your site using stack is covered (here)[https://jaspervdj.be/hakyll/tutorials/02-basics.html].
+
+A quick recap:
+
+```
+$ stack build
+$ stack exec CleanMagic-hakyll build # or rebuild if you made changes to site.hs
+```
+
+Then
+```
+$ stack exec CleanMagic-hakyll watch
+```
+
+And access the site at:
+
+http://127.0.0.1:8000
 
 --
 

@@ -1,0 +1,22 @@
+name:                CleanMagic-hakyll
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/katychuang/CleanMagic-hakyll#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Katy Chuang
+maintainer:          katychuang@gmail.com
+copyright:           2018 Katy Chuang
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+executable CleanMagic-hakyll
+  main-is:             site.hs
+  default-language:    Haskell2010
+  ghc-options:         -threaded
+  build-depends:       base >= 4.7 && < 5,
+                       hakyll,
+                       pandoc
