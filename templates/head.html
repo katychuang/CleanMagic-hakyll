@@ -48,20 +48,27 @@ if (window.navigator.appName == "Microsoft Internet Explorer") {
     <!-- index ROBOTS follow --> 
     <meta name="robots"    content="index, follow" />
     <!-- Site Desciption --> 
+    $if(site_description)$
     <meta name="description" content="$site_description$">
-        <!-- Site Desciption --> 
-    <meta name="keywords" content="Katy Chuang, katychuang, data science, Web Developer, Front End Engineer">
+    $endif$
+    
+    <meta name="keywords" content="Katy Chuang, katychuang, data science, Web Developer">
     <!-- Favicon --> 
     <link rel="shortcut icon" href="$baseurl$/static/img/ico.png" type="image/x-icon" />
     <!-- Blog Title -->
+    $if(title)$
+    <title>$title$</title>
+    $else$
     <title>My beautiful blog </title>
-
+    $endif$	
     <!--     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 --> 
     <!-- Property Metas --> 
     <meta property="og:image" content="$baseurl$/static/img/ix.png"/>
+    $if(site_description)$
     <meta property="og:title" content="$site_description$"/>
     <meta property="og:site_name" content="$site_description$"/>
+    $endif$
     <!-- Canonical -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <!-- StyleSheet -->
