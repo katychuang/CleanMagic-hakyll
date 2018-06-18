@@ -4,8 +4,7 @@ This theme is a fork of [CleanMagicMedium-Jekyll](https://github.com/SpaceG/Clea
 
 ## Installation instructions
 
-Note that this theme has specific features with requires a custom written [siteCtx context](https://github.com/katychuang/hakyll-cssgarden/blob/master/cleanMagic-hakyll/site.hs#L67), with specific fields mapped to the template fields. For example, $site_description$ is mapped below to "my beautiful blog"
-
+Note that this theme has specific design features that require a custom written [siteCtx context](https://github.com/katychuang/CleanMagic-hakyll/blob/master/site.hs#L68) that contains specific field values mapped to the template fields. For example, `$site_description$` in the template files is mapped to the constant field with the string, "my beautiful blog".
 
 ```haskell
 siteCtx :: Context String
@@ -19,7 +18,7 @@ siteCtx =
     defaultContext
 ```
 
-Once you have the field strings written as how you'd like it, make sure that you're connecting this function where your pages are being rendered, for example in creating the `index.html` page, you want to include it, similar to the following ([ref](https://github.com/katychuang/hakyll-cssgarden/blob/master/cleanMagic-hakyll/site.hs#L51)): 
+Once you have the field strings written as how you'd like it, make sure that you're connecting this function where your pages are being rendered, for example in creating the `index.html` page, you want to include it, similar to the following ([ref](https://github.com/katychuang/CleanMagic-hakyll/blob/master/site.hs#L54)): 
 
 ```haskell
 match "index.html" $ do
@@ -39,7 +38,7 @@ match "index.html" $ do
 
 ## Building with Stack
 
-Building your site using stack is covered (here)[https://jaspervdj.be/hakyll/tutorials/02-basics.html].
+Building your site using stack is covered [here](https://jaspervdj.be/hakyll/tutorials/02-basics.html).
 
 A quick recap:
 
@@ -61,6 +60,6 @@ http://127.0.0.1:8000
 
 This theme features a top navigation bar, and an area for beautiful header background images. Clean and serene, it's sure to give your posts an extra polish.
 
-![Preview](../gallery/images/cleanMagic_hakyll-index.png)
+![Preview](https://github.com/katychuang/hakyll-cssgarden/blob/master/gallery/images/cleanMagic_hakyll-index.png?raw=true)
 
 ![Preview](https://raw.githubusercontent.com/SpaceG/spaceg.github.io/5f240c5e8b3f8e2cb9f776688466de651d5d8958/img/intro-theme-1.png)
